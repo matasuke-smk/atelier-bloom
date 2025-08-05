@@ -363,7 +363,7 @@ class ProductsPage {
                         <span class="product-name-preview">${product.name}</span>
                         <small>画像準備中</small>
                     </div>
-                    <button class="favorite-btn" data-product-id="${product.id}">
+                    <button class="favorite-btn" data-product-id="${product.id}" title="${this.isFavorite(product.id) ? 'お気に入りから削除' : 'お気に入りに追加'}">
                         ${this.isFavorite(product.id) ? '❤️' : '♡'}
                     </button>
                     ${product.isNew ? '<span class="new-badge">NEW</span>' : ''}
@@ -409,7 +409,17 @@ class ProductsPage {
         // ボタンの表示を更新
         const button = document.querySelector(`[data-product-id="${productId}"]`);
         if (button) {
-            button.innerHTML = this.isFavorite(productId) ? '❤️' : '♡';
+            const isFavorited = this.isFavorite(productId);
+            button.textContent = isFavorited ? '❤️' : '♡';
+            button.title = isFavorited ? 'お気に入りから削除' : 'お気に入りに追加';
+            
+            // 視覚的フィードバックを追加
+            button.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                button.style.transform = '';
+            }, 150);
+            
+            console.log(`お気に入り${isFavorited ? '追加' : '削除'}: ${productId}`);
         }
     }
 
@@ -521,14 +531,29 @@ const additionalCSS = `
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     z-index: 3;
     transition: all 0.3s ease;
+    line-height: 1;
 }
 
 .favorite-btn:hover {
     background: white;
     transform: scale(1.1);
+}
+
+.favorite-btn:active {
+    transform: scale(0.95);
+}
+
+/* お気に入りアイコンの色を調整してより見やすく */
+.favorite-btn {
+    color: #666;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.favorite-btn:hover {
+    color: #ff6b6b;
 }
 
 .error-message {
