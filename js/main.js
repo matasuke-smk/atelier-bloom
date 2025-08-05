@@ -241,7 +241,7 @@ class MainApp {
     setupEventListeners() {
         // 少し遅延してDOM要素を確実に取得
         setTimeout(() => {
-            // カートボタンクリック
+            // デスクトップカートボタンクリック
             const cartBtn = document.querySelector('.cart-btn');
             if (cartBtn && !cartBtn.dataset.listenerAdded) {
                 cartBtn.addEventListener('click', (e) => {
@@ -253,6 +253,20 @@ class MainApp {
                 console.log('カートボタンイベントリスナー追加完了');
             } else {
                 console.log('カートボタンが見つからないか既に設定済み:', cartBtn);
+            }
+
+            // モバイルカートボタンクリック
+            const mobileCartBtn = document.querySelector('.mobile-cart-btn');
+            if (mobileCartBtn && !mobileCartBtn.dataset.listenerAdded) {
+                mobileCartBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log('モバイルカートボタンクリック');
+                    this.showCartModal();
+                });
+                mobileCartBtn.dataset.listenerAdded = 'true';
+                console.log('モバイルカートボタンイベントリスナー追加完了');
+            } else {
+                console.log('モバイルカートボタンが見つからないか既に設定済み:', mobileCartBtn);
             }
 
             // お気に入りボタンクリック
@@ -357,10 +371,18 @@ class MainApp {
     }
 
     updateCartCount() {
+        const totalItems = this.cart.reduce((total, item) => total + item.quantity, 0);
+        
+        // デスクトップカートカウント更新
         const cartCount = document.getElementById('cartCount');
         if (cartCount) {
-            const totalItems = this.cart.reduce((total, item) => total + item.quantity, 0);
             cartCount.textContent = totalItems;
+        }
+        
+        // モバイルカートカウント更新
+        const mobileCartCount = document.getElementById('mobileCartCount');
+        if (mobileCartCount) {
+            mobileCartCount.textContent = totalItems;
         }
     }
 

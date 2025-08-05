@@ -2353,6 +2353,47 @@ section {
     font-size: 14px;
 }
 
+/* Mobile Header Actions */
+.mobile-header-actions {
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-cart-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobile-cart-btn:hover {
+    color: var(--accent-color);
+}
+
+.mobile-cart-count {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -25%);
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -2383,6 +2424,10 @@ section {
     
     .header-actions {
         display: none;
+    }
+    
+    .mobile-header-actions {
+        display: flex;
     }
     
     .mobile-menu-btn {
