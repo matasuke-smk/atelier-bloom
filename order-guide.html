@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご注文方法 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html" class="active">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>ご注文方法</span>
+            </div>
+        </div>
+
+        <section class="guide-section">
+            <div class="container">
+                <h1 class="page-title">ご注文方法</h1>
+                
+                <div class="guide-content">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>商品を選ぶ</h3>
+                            <p>商品一覧ページやカテゴリーページから、お気に入りの商品をお選びください。商品詳細ページで詳しい情報をご確認いただけます。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>カートに追加</h3>
+                            <p>商品詳細ページで数量を選択し、「カートに追加」ボタンをクリックしてください。複数商品をまとめてご注文いただけます。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>カート確認</h3>
+                            <p>ヘッダーのカートアイコンをクリックし、注文内容をご確認ください。数量の変更や商品の削除も可能です。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>お客様情報入力</h3>
+                            <p>お名前、メールアドレス、お電話番号などの必要事項をご入力ください。会員の方はログインで情報を自動入力できます。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>配送先指定</h3>
+                            <p>商品をお届けする住所をご指定ください。お客様情報と異なる住所への配送も承ります。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>お支払い方法選択</h3>
+                            <p>クレジットカード、銀行振込、後払い（コンビニ・郵便局）からお支払い方法をお選びください。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h3>注文確定</h3>
+                            <p>ご注文内容を最終確認の上、「注文を確定する」ボタンをクリックしてください。注文確認メールが自動送信されます。</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-note">
+                        <h3>ご注意事項</h3>
+                        <ul>
+                            <li>ハンドメイド商品のため、製作に5-7営業日いただきます</li>
+                            <li>在庫数は常に変動しており、ご注文時に在庫切れの場合がございます</li>
+                            <li>商品の色合いは、ご覧いただくモニターによって若干異なる場合があります</li>
+                            <li>5,000円以上のご注文で送料無料となります</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-contact">
+                        <h3>ご不明な点がございましたら</h3>
+                        <p>ご注文に関してご不明な点やご質問がございましたら、お気軽に<a href="contact.html">お問い合わせフォーム</a>よりご連絡ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

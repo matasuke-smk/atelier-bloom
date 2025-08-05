@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(node server.js)",
+      "Bash(chmod:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配送について - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html" class="active">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>配送について</span>
+            </div>
+        </div>
+
+        <section class="guide-section">
+            <div class="container">
+                <h1 class="page-title">配送について</h1>
+                
+                <div class="guide-content">
+                    <div class="shipping-info">
+                        <h3>📦 配送方法</h3>
+                        <div class="shipping-method">
+                            <h4>ヤマト運輸 宅急便コンパクト</h4>
+                            <p>アクセサリー専用の小型配送サービスをご利用いたします。</p>
+                            <ul>
+                                <li>配送サイズ：専用BOX（縦20cm×横25cm×高さ5cm）</li>
+                                <li>追跡番号付きで安心</li>
+                                <li>受取時間帯指定可能</li>
+                                <li>不在時は再配達対応</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="shipping-fee">
+                        <h3>💰 送料</h3>
+                        <div class="fee-table">
+                            <div class="fee-row">
+                                <span class="fee-label">全国一律</span>
+                                <span class="fee-price">500円（税込）</span>
+                            </div>
+                            <div class="fee-row special">
+                                <span class="fee-label">5,000円以上のご注文</span>
+                                <span class="fee-price">送料無料</span>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <p>※ 沖縄・離島も追加料金なしでお届けいたします</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery-time">
+                        <h3>⏰ お届け日数</h3>
+                        <div class="time-info">
+                            <div class="time-item">
+                                <h4>製作期間</h4>
+                                <p>ご注文確定後 <strong>5〜7営業日</strong></p>
+                                <span class="time-note">※ ハンドメイド商品のため、一点一点丁寧に製作いたします</span>
+                            </div>
+                            <div class="time-item">
+                                <h4>発送からお届けまで</h4>
+                                <p><strong>1〜2日</strong>でお届け</p>
+                                <span class="time-note">※ 地域により異なります</span>
+                            </div>
+                        </div>
+                        <div class="total-time">
+                            <p><strong>合計：ご注文から6〜9営業日でお届け</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="time-selection">
+                        <h3>🕐 配達時間帯指定</h3>
+                        <div class="time-slots">
+                            <div class="time-slot">午前中（8:00〜12:00）</div>
+                            <div class="time-slot">14:00〜16:00</div>
+                            <div class="time-slot">16:00〜18:00</div>
+                            <div class="time-slot">18:00〜20:00</div>
+                            <div class="time-slot">19:00〜21:00</div>
+                        </div>
+                        <div class="note">
+                            <p>※ 時間帯指定は無料でご利用いただけます</p>
+                            <p>※ 交通事情により前後する場合がございます</p>
+                        </div>
+                    </div>
+
+                    <div class="packaging">
+                        <h3>📮 梱包について</h3>
+                        <div class="packaging-details">
+                            <p>大切なアクセサリーを安全にお届けするため、以下の梱包を行っております：</p>
+                            <ul>
+                                <li>専用のアクセサリーボックスに収納</li>
+                                <li>緩衝材（プチプチ）でしっかり保護</li>
+                                <li>防水対策として密封パック使用</li>
+                                <li>ブランドロゴ入りの上質なギフトバッグでお届け</li>
+                            </ul>
+                            <div class="note">
+                                <p>※ ギフト包装をご希望の場合は、注文時にお申し付けください（無料）</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-delivery">
+                        <h3>🎁 特別配送サービス</h3>
+                        <div class="special-services">
+                            <div class="service-item">
+                                <h4>お急ぎ便（+1,000円）</h4>
+                                <p>製作期間を3営業日に短縮</p>
+                                <span class="service-note">※ 在庫商品のみ対応可能</span>
+                            </div>
+                            <div class="service-item">
+                                <h4>ギフト包装（無料）</h4>
+                                <p>高級ギフトボックス + リボン装飾</p>
+                                <span class="service-note">※ メッセージカードもお付けできます</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tracking">
+                        <h3>📱 配送状況の確認</h3>
+                        <div class="tracking-info">
+                            <p>商品を発送いたしましたら、追跡番号をメールでお知らせいたします。</p>
+                            <p>ヤマト運輸の荷物お問い合わせシステムにて、リアルタイムで配送状況をご確認いただけます。</p>
+                            <div class="tracking-link">
+                                <a href="http://toi.kuronekoyamato.co.jp/cgi-bin/tneko" target="_blank" rel="noopener">
+                                    ヤマト運輸 荷物お問い合わせ →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-notes">
+                        <h3>⚠️ 配送に関するご注意</h3>
+                        <ul>
+                            <li>年末年始・GW・お盆期間は配送が遅れる場合があります</li>
+                            <li>台風や大雪等の天候不良時は配送に影響が出る場合があります</li>
+                            <li>お届け先が不明確な場合、事前にご連絡させていただく場合があります</li>
+                            <li>長期不在で商品が返送された場合、再送時の送料はお客様負担となります</li>
+                        </ul>
+                    </div>
+
+                    <div class="guide-contact">
+                        <h3>配送に関するお問い合わせ</h3>
+                        <p>配送についてご不明な点やご要望がございましたら、<a href="contact.html">お問い合わせフォーム</a>よりお気軽にご連絡ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

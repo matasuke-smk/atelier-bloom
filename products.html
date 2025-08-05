@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品一覧 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html" class="active">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; <span>商品一覧</span>
+            </div>
+        </div>
+
+        <section class="products-section">
+            <div class="container">
+                <h1 class="page-title">商品一覧</h1>
+                
+                <div class="products-controls">
+                    <div class="filters">
+                        <select id="categoryFilter">
+                            <option value="">すべてのカテゴリー</option>
+                            <option value="pierced">ピアス</option>
+                            <option value="necklaces">ネックレス</option>
+                            <option value="bracelets">ブレスレット</option>
+                            <option value="limited">限定商品</option>
+                        </select>
+                        
+                        <select id="priceFilter">
+                            <option value="">価格帯</option>
+                            <option value="0-3000">〜3,000円</option>
+                            <option value="3000-4000">3,000円〜4,000円</option>
+                            <option value="4000-5000">4,000円〜5,000円</option>
+                            <option value="5000-">5,000円〜</option>
+                        </select>
+                    </div>
+                    
+                    <div class="sort">
+                        <select id="sortBy">
+                            <option value="newest">新着順</option>
+                            <option value="price-low">価格の安い順</option>
+                            <option value="price-high">価格の高い順</option>
+                            <option value="popular">人気順</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- 商品はJavaScriptで動的に生成されます -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- ページネーションもJavaScriptで動的に生成されます -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

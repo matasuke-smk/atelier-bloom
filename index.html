@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atelier Bloom - ハンドメイドアクセサリー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <div class="hero-content">
+                        <h2>あなただけの特別な一品を</h2>
+                        <p>日常に小さな特別を添える、自然体のアクセサリー</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="new-arrivals">
+            <div class="container">
+                <h2 class="section-title">NEW ARRIVAL</h2>
+                <div class="products-grid" id="newArrivals">
+                    <!-- 新着商品がJavaScriptで挿入されます -->
+                </div>
+                <div class="section-footer">
+                    <a href="products.html" class="btn-more">もっと見る</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">CATEGORY</h2>
+                <div class="category-grid">
+                    <a href="products.html?category=pierced" class="category-item">
+                        <div class="category-image">
+                            <div class="placeholder-image">ピアス</div>
+                        </div>
+                        <h3>Pierced Earrings</h3>
+                    </a>
+                    <a href="products.html?category=necklaces" class="category-item">
+                        <div class="category-image">
+                            <div class="placeholder-image">ネックレス</div>
+                        </div>
+                        <h3>Necklaces</h3>
+                    </a>
+                    <a href="products.html?category=bracelets" class="category-item">
+                        <div class="category-image">
+                            <div class="placeholder-image">ブレスレット</div>
+                        </div>
+                        <h3>Bracelets</h3>
+                    </a>
+                    <a href="products.html?category=limited" class="category-item">
+                        <div class="category-image">
+                            <div class="placeholder-image">限定商品</div>
+                        </div>
+                        <h3>Limited Edition</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="brand-story" id="about">
+            <div class="container">
+                <h2 class="section-title">OUR STORY</h2>
+                <div class="story-content">
+                    <div class="story-text">
+                        <p>一つひとつ心を込めて手作りするアクセサリーは、身につける方の日常を少し特別なものにしてくれます。自然の美しさからインスピレーションを得たデザインで、あなただけの物語を紡いでいきます。</p>
+                        <a href="about.html" class="btn-secondary">詳しく見る</a>
+                    </div>
+                    <div class="story-image">
+                        <div class="placeholder-image">制作風景</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram">
+            <div class="container">
+                <h2 class="section-title">INSTAGRAM @atelier_bloom</h2>
+                <div class="instagram-grid">
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 1</div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 2</div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 3</div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 4</div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 5</div>
+                    </div>
+                    <div class="instagram-item">
+                        <div class="placeholder-image">Instagram 6</div>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <button class="btn-follow">フォローする</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

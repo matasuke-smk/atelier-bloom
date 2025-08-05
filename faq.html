@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>よくある質問</span>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <div class="container">
+                <h1 class="page-title">よくある質問</h1>
+                
+                <div class="faq-intro">
+                    <p>お客様からよくいただくご質問をまとめました。こちらで解決しない場合は、<a href="contact.html">お問い合わせフォーム</a>よりお気軽にご連絡ください。</p>
+                </div>
+
+                <div class="faq-search">
+                    <input type="text" id="faqSearch" placeholder="キーワードで検索..." class="search-input">
+                    <button class="search-btn-faq">🔍</button>
+                </div>
+
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">すべて</button>
+                    <button class="category-btn" data-category="order">注文について</button>
+                    <button class="category-btn" data-category="product">商品について</button>
+                    <button class="category-btn" data-category="shipping">配送について</button>
+                    <button class="category-btn" data-category="payment">支払いについて</button>
+                    <button class="category-btn" data-category="care">お手入れ</button>
+                </div>
+
+                <div class="faq-content">
+                    <!-- 注文について -->
+                    <div class="faq-item" data-category="order">
+                        <div class="faq-question">
+                            <h3>注文から何日で届きますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ハンドメイド商品のため、ご注文確定後5-7営業日で製作し、発送いたします。発送後1-2日でお届けとなるため、<strong>合計6-9営業日</strong>でお手元に届きます。</p>
+                            <p>お急ぎの場合は、お急ぎ便（+1,000円）をご利用いただくと製作期間を3営業日に短縮できます。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="order">
+                        <div class="faq-question">
+                            <h3>注文後のキャンセルはできますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>製作開始前（ご注文から24時間以内）であればキャンセル可能です。お支払い完了後の場合は、全額返金いたします。</p>
+                            <p>製作開始後のキャンセルは承れませんので、ご了承ください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="order">
+                        <div class="faq-question">
+                            <h3>注文確認メールが届きません</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>迷惑メールフォルダをご確認ください。@atelier-bloom.comからのメールを受信できるよう設定してください。</p>
+                            <p>それでも届かない場合は、お手数ですが<a href="contact.html">お問い合わせフォーム</a>よりご連絡ください。</p>
+                        </div>
+                    </div>
+
+                    <!-- 商品について -->
+                    <div class="faq-item" data-category="product">
+                        <div class="faq-question">
+                            <h3>金属アレルギーでも着用できますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>金属アレルギー対応の素材もご用意しております：</p>
+                            <ul>
+                                <li><strong>サージカルステンレス：</strong>医療用具にも使用される安全な素材</li>
+                                <li><strong>チタン：</strong>最も安全性の高い金属</li>
+                                <li><strong>14Kゴールドフィルド：</strong>金の層が厚く、アレルギーを起こしにくい</li>
+                            </ul>
+                            <p>商品ページで素材をご確認いただき、ご不明な点はお問い合わせください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="product">
+                        <div class="faq-question">
+                            <h3>サイズ調整はできますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>リングやブレスレットのサイズ調整を承ります（有料1,000円〜）。</p>
+                            <p>ご購入後のサイズ変更も可能ですが、デザインによっては対応できない場合があります。事前にお問い合わせください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="product">
+                        <div class="faq-question">
+                            <h3>オーダーメイドは可能ですか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、オーダーメイドも承っております。お客様のご希望に合わせて一点一点製作いたします。</p>
+                            <p>料金や製作期間はデザインにより異なりますので、まずは<a href="contact.html">お問い合わせフォーム</a>よりご相談ください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="product">
+                        <div class="faq-question">
+                            <h3>商品の実物の色合いが気になります</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>商品画像は実物に近い色で撮影しておりますが、お使いのモニターにより多少異なって見える場合があります。</p>
+                            <p>色合いについてご不安な場合は、ご注文前にお問い合わせいただければ、より詳しい説明や追加画像をお送りします。</p>
+                        </div>
+                    </div>
+
+                    <!-- 配送について -->
+                    <div class="faq-item" data-category="shipping">
+                        <div class="faq-question">
+                            <h3>送料はいくらですか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>全国一律500円（税込）です。<strong>5,000円以上のご注文で送料無料</strong>となります。</p>
+                            <p>沖縄・離島も追加料金はありません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="shipping">
+                        <div class="faq-question">
+                            <h3>配達時間の指定はできますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、以下の時間帯で指定可能です（無料）：</p>
+                            <ul>
+                                <li>午前中（8:00〜12:00）</li>
+                                <li>14:00〜16:00</li>
+                                <li>16:00〜18:00</li>
+                                <li>18:00〜20:00</li>
+                                <li>19:00〜21:00</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="shipping">
+                        <div class="faq-question">
+                            <h3>ギフト包装はできますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>無料でギフト包装を承ります。高級ギフトボックスにリボン装飾を施してお届けします。</p>
+                            <p>メッセージカードもお付けできますので、ご注文時にお申し付けください。</p>
+                        </div>
+                    </div>
+
+                    <!-- 支払いについて -->
+                    <div class="faq-item" data-category="payment">
+                        <div class="faq-question">
+                            <h3>どのような支払い方法がありますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>以下のお支払い方法をご利用いただけます：</p>
+                            <ul>
+                                <li><strong>クレジットカード：</strong>VISA、MasterCard、JCB、AMEX、Diners（手数料無料）</li>
+                                <li><strong>銀行振込：</strong>お振込手数料はお客様負担</li>
+                                <li><strong>後払い：</strong>コンビニ・郵便局（手数料330円）</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="payment">
+                        <div class="faq-question">
+                            <h3>領収書は発行できますか？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、領収書を発行いたします。ご希望の場合は、ご注文時の備考欄または<a href="contact.html">お問い合わせフォーム</a>よりお申し付けください。</p>
+                            <p>宛名、但し書きもご指定いただけます。</p>
+                        </div>
+                    </div>
+
+                    <!-- お手入れ -->
+                    <div class="faq-item" data-category="care">
+                        <div class="faq-question">
+                            <h3>アクセサリーのお手入れ方法を教えてください</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>素材別のお手入れ方法：</p>
+                            <ul>
+                                <li><strong>シルバー：</strong>専用クロスで乾拭き、変色した場合はシルバークリーナーを使用</li>
+                                <li><strong>ゴールド：</strong>柔らかい布で乾拭き、汚れが気になる時は中性洗剤で優しく洗浄</li>
+                                <li><strong>天然石：</strong>水洗い厳禁、柔らかいブラシで汚れを落とす</li>
+                            </ul>
+                            <p>使用後は必ず汚れを拭き取り、密閉できるケースで保管してください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="care">
+                        <div class="faq-question">
+                            <h3>変色してしまった場合の対処法は？</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>軽い変色であれば、以下をお試しください：</p>
+                            <ul>
+                                <li><strong>シルバー：</strong>重曹ペーストで優しく磨く</li>
+                                <li><strong>ゴールド：</strong>中性洗剤を薄めた水で洗浄後、完全に乾燥</li>
+                            </ul>
+                            <p>改善しない場合や大切なアクセサリーの場合は、有料クリーニングサービス（500円〜）をご利用ください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="care">
+                        <div class="faq-question">
+                            <h3>保管方法について教えてください</h3>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>長持ちさせるための保管方法：</p>
+                            <ul>
+                                <li>密閉できるジュエリーボックスやジップ袋で保管</li>
+                                <li>直射日光、高温多湿を避ける</li>
+                                <li>他のアクセサリーと重ねて保管しない（傷防止）</li>
+                                <li>シルバーは乾燥剤と一緒に保管（変色防止）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-contact">
+                    <h2>解決しない場合は</h2>
+                    <p>こちらで解決しないご質問がございましたら、お気軽に<a href="contact.html">お問い合わせフォーム</a>よりご連絡ください。</p>
+                    <p>専門スタッフが丁寧にお答えいたします。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/faq.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品一覧 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="test-local.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="test-local.html">HOME</a>
+                <a href="products-local.html">CATEGORY</a>
+                <a href="#about">ABOUT</a>
+                <a href="#guide">GUIDE</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="test-local.html">ホーム</a> &gt; <span>商品一覧</span>
+            </div>
+        </div>
+
+        <section class="products-section">
+            <div class="container">
+                <h1 class="page-title">商品一覧</h1>
+                
+                <div class="products-controls">
+                    <div class="filters">
+                        <select id="categoryFilter">
+                            <option value="">すべてのカテゴリー</option>
+                            <option value="pierced">ピアス</option>
+                            <option value="necklaces">ネックレス</option>
+                            <option value="bracelets">ブレスレット</option>
+                            <option value="limited">限定商品</option>
+                        </select>
+                        
+                        <select id="priceFilter">
+                            <option value="">価格帯</option>
+                            <option value="0-3000">〜3,000円</option>
+                            <option value="3000-4000">3,000円〜4,000円</option>
+                            <option value="4000-5000">4,000円〜5,000円</option>
+                            <option value="5000-">5,000円〜</option>
+                        </select>
+                    </div>
+                    
+                    <div class="sort">
+                        <select id="sortBy">
+                            <option value="newest">新着順</option>
+                            <option value="price-low">価格の安い順</option>
+                            <option value="price-high">価格の高い順</option>
+                            <option value="popular">人気順</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- 商品一覧（ピアス 15商品） -->
+                    <a href="product-detail-local.html?id=1" class="product-item" data-category="pierced" data-price="3200" data-new="true" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">パールドロップピアス</div>
+                            <button class="favorite-btn" data-product-id="1" onclick="event.preventDefault(); toggleFavorite(1)">♡</button>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">パールドロップピアス</h3>
+                            <p class="product-price price">¥3,200</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=5" class="product-item" data-category="pierced" data-price="3600" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">ムーンストーンフープピアス</div>
+                            <button class="favorite-btn" data-product-id="5" onclick="event.preventDefault(); toggleFavorite(5)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ムーンストーンフープピアス</h3>
+                            <p class="product-price price">¥3,600</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=8" class="product-item" data-category="pierced" data-price="2800" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">クリスタルスタッドピアス</div>
+                            <button class="favorite-btn" data-product-id="8" onclick="event.preventDefault(); toggleFavorite(8)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">クリスタルスタッドピアス</h3>
+                            <p class="product-price price">¥2,800</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=11" class="product-item" data-category="pierced" data-price="3400" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">コットンパールロングピアス</div>
+                            <button class="favorite-btn" data-product-id="11" onclick="event.preventDefault(); toggleFavorite(11)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">コットンパールロングピアス</h3>
+                            <p class="product-price price">¥3,400</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=15" class="product-item" data-category="pierced" data-price="3100" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">フェザーピアス</div>
+                            <button class="favorite-btn" data-product-id="15" onclick="event.preventDefault(); toggleFavorite(15)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">フェザーピアス</h3>
+                            <p class="product-price price">¥3,100</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=18" class="product-item" data-category="pierced" data-price="2900" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">インフィニティピアス</div>
+                            <button class="favorite-btn" data-product-id="18" onclick="event.preventDefault(); toggleFavorite(18)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">インフィニティピアス</h3>
+                            <p class="product-price price">¥2,900</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <!-- ネックレス 10商品 -->
+                    <a href="product-detail-local.html?id=2" class="product-item" data-category="necklaces" data-price="4800" data-new="true" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">ローズクォーツネックレス</div>
+                            <button class="favorite-btn" data-product-id="2" onclick="event.preventDefault(); toggleFavorite(2)">♡</button>
+                            <span class="new-badge">NEW</span>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ローズクォーツネックレス</h3>
+                            <p class="product-price price">¥4,800</p>
+                            <span class="stock-status low-stock">残り3点</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=6" class="product-item" data-category="necklaces" data-price="5200" data-new="true" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">アメジストティアドロップネックレス</div>
+                            <button class="favorite-btn" data-product-id="6" onclick="event.preventDefault(); toggleFavorite(6)">♡</button>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">アメジストティアドロップネックレス</h3>
+                            <p class="product-price price">¥5,200</p>
+                            <span class="stock-status low-stock">残り4点</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=9" class="product-item" data-category="necklaces" data-price="5800" data-new="false" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">ヴィンテージローズネックレス</div>
+                            <button class="favorite-btn" data-product-id="9" onclick="event.preventDefault(); toggleFavorite(9)">♡</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ヴィンテージローズネックレス</h3>
+                            <p class="product-price price">¥5,800</p>
+                            <span class="stock-status low-stock">残り3点</span>
+                        </div>
+                    </a>
+
+                    <!-- ブレスレット 10商品 -->
+                    <a href="product-detail-local.html?id=3" class="product-item" data-category="bracelets" data-price="3800" data-new="false" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">シンプルゴールドブレスレット</div>
+                            <button class="favorite-btn" data-product-id="3" onclick="event.preventDefault(); toggleFavorite(3)">♡</button>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">シンプルゴールドブレスレット</h3>
+                            <p class="product-price price">¥3,800</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=7" class="product-item" data-category="bracelets" data-price="4200" data-new="false" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">ターコイズチェーンブレスレット</div>
+                            <button class="favorite-btn" data-product-id="7" onclick="event.preventDefault(); toggleFavorite(7)">♡</button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ターコイズチェーンブレスレット</h3>
+                            <p class="product-price price">¥4,200</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=10" class="product-item" data-category="bracelets" data-price="3200" data-new="true" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">ミニマルリングブレスレット</div>
+                            <button class="favorite-btn" data-product-id="10" onclick="event.preventDefault(); toggleFavorite(10)">♡</button>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ミニマルリングブレスレット</h3>
+                            <p class="product-price price">¥3,200</p>
+                            <span class="stock-status in-stock">在庫あり</span>
+                        </div>
+                    </a>
+
+                    <!-- 限定商品 5商品 -->
+                    <a href="product-detail-local.html?id=4" class="product-item" data-category="limited" data-price="4200" data-new="true" data-popular="false">
+                        <div class="product-image">
+                            <div class="placeholder-image">桜モチーフピアス</div>
+                            <button class="favorite-btn" data-product-id="4" onclick="event.preventDefault(); toggleFavorite(4)">♡</button>
+                            <span class="new-badge">NEW</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">桜モチーフピアス【限定】</h3>
+                            <p class="product-price price">¥4,200</p>
+                            <span class="stock-status low-stock">残り2点</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=14" class="product-item" data-category="limited" data-price="4500" data-new="true" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">秋の紅葉ピアス</div>
+                            <button class="favorite-btn" data-product-id="14" onclick="event.preventDefault(); toggleFavorite(14)">♡</button>
+                            <span class="new-badge">NEW</span>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">秋の紅葉ピアス【限定】</h3>
+                            <p class="product-price price">¥4,500</p>
+                            <span class="stock-status low-stock">残り3点</span>
+                        </div>
+                    </a>
+
+                    <a href="product-detail-local.html?id=24" class="product-item" data-category="limited" data-price="4300" data-new="true" data-popular="true">
+                        <div class="product-image">
+                            <div class="placeholder-image">雪の結晶ピアス</div>
+                            <button class="favorite-btn" data-product-id="24" onclick="event.preventDefault(); toggleFavorite(24)">♡</button>
+                            <span class="new-badge">NEW</span>
+                            <span class="popular-badge">人気</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">雪の結晶ピアス【限定】</h3>
+                            <p class="product-price price">¥4,300</p>
+                            <span class="stock-status low-stock">残り2点</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>次へ</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="#guide">ご注文方法</a></li>
+                        <li><a href="#guide">お支払いについて</a></li>
+                        <li><a href="#guide">配送について</a></li>
+                        <li><a href="#guide">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#privacy">プライバシーポリシー</a></li>
+                        <li><a href="#terms">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products-local.js"></script>
+</body>
+</html>

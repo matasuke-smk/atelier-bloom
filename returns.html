@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返品・交換について - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html" class="active">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>返品・交換について</span>
+            </div>
+        </div>
+
+        <section class="guide-section">
+            <div class="container">
+                <h1 class="page-title">返品・交換について</h1>
+                
+                <div class="guide-content">
+                    <div class="return-policy">
+                        <h3>🔄 基本方針</h3>
+                        <p>お客様にご満足いただけるよう、以下の条件で返品・交換を承っております。ハンドメイド商品の特性をご理解の上、ご利用ください。</p>
+                    </div>
+
+                    <div class="return-conditions">
+                        <h3>📋 返品・交換の条件</h3>
+                        <div class="condition-section">
+                            <h4>✅ 返品・交換が可能な場合</h4>
+                            <ul class="ok-list">
+                                <li>商品到着から<strong>7日以内</strong>にご連絡いただいた場合</li>
+                                <li>商品に明らかな不具合・破損があった場合</li>
+                                <li>ご注文内容と異なる商品が届いた場合</li>
+                                <li>商品が未使用・未開封の状態である場合</li>
+                                <li>付属品（ボックス、袋等）がすべて揃っている場合</li>
+                            </ul>
+                        </div>
+
+                        <div class="condition-section">
+                            <h4>❌ 返品・交換ができない場合</h4>
+                            <ul class="ng-list">
+                                <li>お客様都合による返品（イメージ違い、サイズ違い等）</li>
+                                <li>一度ご使用になった商品</li>
+                                <li>商品到着から8日以上経過した場合</li>
+                                <li>ピアスの衛生商品（感染症予防のため）</li>
+                                <li>オーダーメイド・カスタマイズ商品</li>
+                                <li>お客様による破損・汚損</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="return-process">
+                        <h3>📞 返品・交換の手順</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>ご連絡</h4>
+                                    <p>商品到着から7日以内に<a href="contact.html">お問い合わせフォーム</a>またはメールでご連絡ください。</p>
+                                    <div class="contact-info">
+                                        <p><strong>メール：</strong>support@atelier-bloom.com</p>
+                                        <p><strong>件名：</strong>返品・交換について（注文番号を記載）</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>内容確認</h4>
+                                    <p>返品・交換理由を確認させていただき、対応方法をご連絡いたします。</p>
+                                    <p>※ 不具合品の場合は写真をお送りいただく場合があります</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>商品返送</h4>
+                                    <p>指定の方法で商品をご返送ください。送料は当店で負担いたします。</p>
+                                    <p>※ 返送用の着払い伝票をお送りいたします</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>確認・処理</h4>
+                                    <p>返送商品確認後、返金または交換商品の発送を行います。</p>
+                                    <p>※ 確認から処理完了まで3-5営業日いただきます</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="refund-info">
+                        <h3>💰 返金について</h3>
+                        <div class="refund-details">
+                            <div class="refund-method">
+                                <h4>返金方法</h4>
+                                <ul>
+                                    <li><strong>クレジットカード：</strong>決済取消（1-2週間後に返金）</li>
+                                    <li><strong>銀行振込：</strong>ご指定口座へ振込（手数料は当店負担）</li>
+                                    <li><strong>後払い：</strong>請求取消処理</li>
+                                </ul>
+                            </div>
+                            <div class="refund-amount">
+                                <h4>返金金額</h4>
+                                <p>商品代金の全額をご返金いたします。</p>
+                                <p>※ 当店都合の場合：送料も含めて全額返金</p>
+                                <p>※ お客様都合の場合：送料はお客様負担</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exchange-info">
+                        <h3>🔄 交換について</h3>
+                        <div class="exchange-details">
+                            <div class="exchange-types">
+                                <h4>交換可能なケース</h4>
+                                <ul>
+                                    <li>サイズ違い（同商品の別サイズへ）</li>
+                                    <li>カラー違い（同商品の別カラーへ）</li>
+                                    <li>不具合品の同等品への交換</li>
+                                </ul>
+                            </div>
+                            <div class="exchange-note">
+                                <h4>交換時の注意点</h4>
+                                <ul>
+                                    <li>在庫がない場合は返金となります</li>
+                                    <li>価格差がある場合は追加料金または差額返金</li>
+                                    <li>交換品の製作に5-7営業日かかります</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quality-assurance">
+                        <h3>🛡️ 品質保証</h3>
+                        <div class="quality-info">
+                            <p>Atelier Bloomでは、すべての商品について以下の品質保証を行っております：</p>
+                            <ul>
+                                <li><strong>製造不良：</strong>お買い上げから1年間無償修理</li>
+                                <li><strong>金属アレルギー：</strong>素材表記に誤りがあった場合は全額返金</li>
+                                <li><strong>破損：</strong>通常使用での破損は6ヶ月間無償修理</li>
+                            </ul>
+                            <div class="warranty-note">
+                                <p>※ 修理不可能な場合は同等品との交換または返金いたします</p>
+                                <p>※ 保証を受けるためには購入時のレシートが必要です</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="care-info">
+                        <h3>💎 アフターケア</h3>
+                        <div class="care-services">
+                            <div class="care-service">
+                                <h4>クリーニングサービス</h4>
+                                <p>ご購入商品の専用クリーニングを承ります（有料）</p>
+                                <p><strong>料金：</strong>500円〜（商品により異なります）</p>
+                            </div>
+                            <div class="care-service">
+                                <h4>サイズ調整</h4>
+                                <p>リングやブレスレットのサイズ調整を承ります</p>
+                                <p><strong>料金：</strong>1,000円〜（調整内容により異なります）</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-support">
+                        <h3>📞 サポートについて</h3>
+                        <div class="support-info">
+                            <p>返品・交換に関してご不明な点がございましたら、以下までお気軽にお問い合わせください：</p>
+                            <div class="support-contact">
+                                <p><strong>メール：</strong>support@atelier-bloom.com</p>
+                                <p><strong>営業時間：</strong>平日 10:00-17:00（土日祝は休業）</p>
+                                <p><strong>お問い合わせフォーム：</strong><a href="contact.html">こちら</a></p>
+                            </div>
+                            <p>お客様のご満足を第一に考え、誠実に対応させていただきます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html" class="active">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>お問い合わせ</span>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <div class="container">
+                <h1 class="page-title">お問い合わせ</h1>
+                
+                <div class="contact-intro">
+                    <p>Atelier Bloomへのお問い合わせはこちらから。商品やご注文について、お気軽にご相談ください。</p>
+                    <p>お返事には1-2営業日いただいております。お急ぎの場合はお電話でお問い合わせください。</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-form-section">
+                        <h2>お問い合わせフォーム</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="required">お名前</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="required">メールアドレス</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">お電話番号</label>
+                                <input type="tel" id="phone" name="phone" placeholder="例: 090-1234-5678">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category" class="required">お問い合わせ種別</label>
+                                <select id="category" name="category" required>
+                                    <option value="">選択してください</option>
+                                    <option value="product">商品について</option>
+                                    <option value="order">ご注文について</option>
+                                    <option value="shipping">配送について</option>
+                                    <option value="return">返品・交換について</option>
+                                    <option value="payment">お支払いについて</option>
+                                    <option value="custom">オーダーメイドについて</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orderNumber">注文番号（該当する場合）</label>
+                                <input type="text" id="orderNumber" name="orderNumber" placeholder="例: AB-20241201-001">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="required">件名</label>
+                                <input type="text" id="subject" name="subject" required placeholder="お問い合わせの件名をご入力ください">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="required">お問い合わせ内容</label>
+                                <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容を詳しくご記入ください"></textarea>
+                            </div>
+
+                            <div class="form-privacy">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <span class="checkmark"></span>
+                                    <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意します
+                                </label>
+                            </div>
+
+                            <div class="form-submit">
+                                <button type="submit" class="submit-btn">送信する</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <h2>その他のお問い合わせ方法</h2>
+                        
+                        <div class="contact-method">
+                            <h3>📧 メール</h3>
+                            <p><strong>support@atelier-bloom.com</strong></p>
+                            <p>24時間受付（返信は営業時間内）</p>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>📞 お電話</h3>
+                            <p><strong>03-1234-5678</strong></p>
+                            <p>平日 10:00-17:00（土日祝除く）</p>
+                            <p class="note">※ 制作中はお電話に出られない場合があります</p>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>📱 SNS</h3>
+                            <div class="sns-links">
+                                <a href="#" class="sns-link instagram">
+                                    📷 Instagram @atelier_bloom
+                                </a>
+                                <p>新作情報やお客様の着用写真を投稿中</p>
+                            </div>
+                        </div>
+
+                        <div class="business-hours">
+                            <h3>⏰ 営業時間</h3>
+                            <div class="hours-info">
+                                <div class="hours-item">
+                                    <span class="day">平日</span>
+                                    <span class="time">10:00 - 17:00</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">土日祝</span>
+                                    <span class="time">休業</span>
+                                </div>
+                            </div>
+                            <p class="hours-note">※ 年末年始・GW・お盆期間は休業いたします</p>
+                        </div>
+
+                        <div class="response-time">
+                            <h3>⌛ 返信について</h3>
+                            <ul>
+                                <li><strong>メール・フォーム：</strong>1-2営業日以内</li>
+                                <li><strong>お電話：</strong>営業時間内に即座に対応</li>
+                                <li><strong>SNS：</strong>2-3営業日以内</li>
+                            </ul>
+                            <p class="response-note">※ 内容により回答にお時間をいただく場合があります</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>よくある質問</h2>
+                    <p>お問い合わせの前に、<a href="faq.html">よくある質問</a>もご確認ください。</p>
+                    
+                    <div class="quick-faq">
+                        <div class="faq-item">
+                            <h4>Q. 製作期間はどのくらいですか？</h4>
+                            <p>A. ご注文確定後、5-7営業日で製作・発送いたします。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Q. 金属アレルギーでも大丈夫ですか？</h4>
+                            <p>A. サージカルステンレスやチタンなど、アレルギー対応素材もご用意しております。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Q. ギフト包装はできますか？</h4>
+                            <p>A. 無料でギフトボックス・リボン装飾を承ります。ご注文時にお申し付けください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

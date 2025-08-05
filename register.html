@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規会員登録 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form-wrapper">
+                    <h2 class="auth-title">新規会員登録</h2>
+                    <p class="auth-subtitle">新規登録で300円OFFクーポンプレゼント</p>
+                    
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lastName">姓</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="error-message" id="lastNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstName">名</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="error-message" id="firstNameError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lastNameKana">姓（フリガナ）</label>
+                                <input type="text" id="lastNameKana" name="lastNameKana" required>
+                                <span class="error-message" id="lastNameKanaError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstNameKana">名（フリガナ）</label>
+                                <input type="text" id="firstNameKana" name="firstNameKana" required>
+                                <span class="error-message" id="firstNameKanaError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">パスワード</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="password-hint">8文字以上、英数字を含む</div>
+                            <div class="password-strength-container">
+                                <div class="password-strength-bar">
+                                    <div class="password-strength" id="passwordStrength"></div>
+                                </div>
+                                <span class="password-strength-text" id="passwordStrengthText"></span>
+                            </div>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">パスワード（確認）</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone" name="phone" placeholder="090-1234-5678">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthday">生年月日</label>
+                            <input type="date" id="birthday" name="birthday">
+                        </div>
+                        
+                        <div class="form-group gender-group">
+                            <label>性別</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-mark"></span>
+                                    女性
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male">
+                                    <span class="radio-mark"></span>
+                                    男性
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="radio-mark"></span>
+                                    その他
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                メルマガを受け取る（新商品情報や限定セール情報をお届けします）
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label required">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                <a href="terms.html" target="_blank">利用規約</a>および<a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する
+                            </label>
+                            <span class="error-message" id="termsError"></span>
+                        </div>
+                        
+                        <button type="submit" class="auth-btn">会員登録</button>
+                        
+                        <div class="auth-divider">
+                            <span>または</span>
+                        </div>
+                        
+                        <div class="auth-links">
+                            <p>すでにアカウントをお持ちの方は</p>
+                            <a href="login.html" class="login-link">ログイン</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="auth-benefits">
+                    <h3>会員特典</h3>
+                    <ul>
+                        <li>新規登録で300円OFFクーポンプレゼント</li>
+                        <li>購入金額の3%ポイント還元</li>
+                        <li>会員限定セール情報をお届け</li>
+                        <li>お気に入り商品の保存</li>
+                        <li>購入履歴の確認</li>
+                        <li>お届け先情報の保存</li>
+                    </ul>
+                    
+                    <div class="security-info">
+                        <h4>セキュリティについて</h4>
+                        <p>お客様の個人情報は、SSL暗号化通信により保護されています。安心してご利用ください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h4>Atelier Bloom</h4>
+                        <p>日常に小さな特別を添える、<br>自然体のアクセサリー</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="about.html">ブランドについて</a></li>
+                        <li><a href="order-guide.html">ご利用ガイド</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>法的事項</h4>
+                    <ul>
+                        <li><a href="terms.html">利用規約</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="returns.html">返品・交換について</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>フォローする</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

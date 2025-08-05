@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私たちについて - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="products.html">CATEGORY</a>
+                <a href="about.html" class="active">ABOUT</a>
+                <a href="order-guide.html">GUIDE</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">ホーム</a> &gt; 
+                <span>私たちについて</span>
+            </div>
+        </div>
+
+        <section class="about-section">
+            <div class="container">
+                <h1 class="page-title">私たちについて</h1>
+                
+                <div class="about-hero">
+                    <div class="about-hero-content">
+                        <h2>日常に小さな特別を添える、自然体のアクセサリー</h2>
+                        <p>一つひとつ心を込めて手作りするアクセサリーは、身につける方の日常を少し特別なものにしてくれます。自然の美しさからインスピレーションを得たデザインで、あなただけの物語を紡いでいきます。</p>
+                    </div>
+                    <div class="about-hero-image">
+                        <div class="placeholder-image">制作風景のメイン画像</div>
+                    </div>
+                </div>
+
+                <div class="brand-story-detail">
+                    <h2 class="section-title">ブランドストーリー</h2>
+                    <div class="story-content">
+                        <p>Atelier Bloomは、「日常に小さな特別を添える」をコンセプトに、2020年に誕生しました。</p>
+                        
+                        <p>創設者である佐藤美咲は、大手アパレル企業でアクセサリーデザイナーとして5年間勤務した後、「もっと一人ひとりに寄り添ったものづくりがしたい」という想いから、ハンドメイドアクセサリーブランドを立ち上げました。</p>
+                        
+                        <p>ブランド名の「Bloom」は「花開く」という意味。身につけてくれる方の個性や魅力が花開くように、そんな願いを込めて名付けました。</p>
+                        
+                        <p>自然の中で感じる美しい瞬間—朝露に光る花びら、夕日に染まる空、風に揺れる木々—そうした日常の中にある特別な瞬間を、アクセサリーという形で表現しています。</p>
+                    </div>
+                </div>
+
+                <div class="creator-profile">
+                    <h2 class="section-title">作家プロフィール</h2>
+                    <div class="profile-content">
+                        <div class="profile-image">
+                            <div class="placeholder-image">作家プロフィール写真</div>
+                        </div>
+                        <div class="profile-text">
+                            <h3>佐藤 美咲（32歳）</h3>
+                            <p class="profile-role">ハンドメイドアクセサリー作家 / Atelier Bloom 代表</p>
+                            
+                            <div class="profile-details">
+                                <h4>経歴</h4>
+                                <ul>
+                                    <li>美術大学工芸学科卒業</li>
+                                    <li>大手アパレル企業にてアクセサリーデザイナーとして5年間勤務</li>
+                                    <li>2020年 Atelier Bloom設立</li>
+                                    <li>Instagram @atelier_bloom フォロワー3,000人</li>
+                                </ul>
+                                
+                                <h4>制作への想い</h4>
+                                <p>「一つひとつのアクセサリーに込める想いは、着けてくださる方の日常を少しでも豊かにしたいということです。大量生産では表現できない、手仕事ならではの温かみと個性を大切にしています。」</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="craftsmanship">
+                    <h2 class="section-title">制作へのこだわり</h2>
+                    <div class="craftsmanship-grid">
+                        <div class="craft-item">
+                            <div class="craft-icon">🌿</div>
+                            <h3>自然からのインスピレーション</h3>
+                            <p>季節の移ろいや自然の美しさからデザインのヒントを得て、オリジナルのスケッチから一つひとつ丁寧に制作しています。</p>
+                        </div>
+                        
+                        <div class="craft-item">
+                            <div class="craft-icon">✋</div>
+                            <h3>手仕事へのこだわり</h3>
+                            <p>機械では表現できない微細な表情や質感を大切に、すべての工程を手作業で行っています。同じデザインでも一つひとつ異なる表情を楽しんでいただけます。</p>
+                        </div>
+                        
+                        <div class="craft-item">
+                            <div class="craft-icon">💎</div>
+                            <h3>厳選された素材</h3>
+                            <p>肌に直接触れるものだからこそ、素材選びには特に気を配っています。金属アレルギーに配慮した素材も豊富にご用意しています。</p>
+                        </div>
+                        
+                        <div class="craft-item">
+                            <div class="craft-icon">🎨</div>
+                            <h3>オリジナルデザイン</h3>
+                            <p>トレンドに左右されない、長く愛用していただけるタイムレスなデザインを心がけています。シンプルながらも印象的なアクセサリーを制作しています。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atelier-photos">
+                    <h2 class="section-title">アトリエの様子</h2>
+                    <div class="photos-grid">
+                        <div class="photo-item">
+                            <div class="placeholder-image">制作風景1</div>
+                            <p>丁寧な手仕事で一つひとつ制作</p>
+                        </div>
+                        <div class="photo-item">
+                            <div class="placeholder-image">制作風景2</div>
+                            <p>自然光が差し込む明るいアトリエ</p>
+                        </div>
+                        <div class="photo-item">
+                            <div class="placeholder-image">制作風景3</div>
+                            <p>厳選された素材とツール</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="values">
+                    <h2 class="section-title">私たちの想い</h2>
+                    <div class="values-content">
+                        <div class="value-item">
+                            <h3>🌸 個性を大切に</h3>
+                            <p>お一人おひとりの個性や好みに寄り添い、その方らしさを引き出すアクセサリーをお届けします。</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <h3>🌱 持続可能なものづくり</h3>
+                            <p>環境に配慮した素材選びと、長くご愛用いただける品質にこだわり、持続可能なものづくりを心がけています。</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <h3>💝 心のこもったサービス</h3>
+                            <p>ご購入からアフターケアまで、お客様お一人おひとりに心を込めてサポートいたします。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h2>お客様との出会いを大切に</h2>
+                    <p>ご質問やご相談がございましたら、お気軽にお問い合わせください。<br>
+                    あなたにぴったりのアクセサリーを一緒に見つけましょう。</p>
+                    <a href="contact.html" class="btn-primary">お問い合わせはこちら</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="order-guide.html">ご注文方法</a></li>
+                        <li><a href="payment.html">お支払いについて</a></li>
+                        <li><a href="shipping.html">配送について</a></li>
+                        <li><a href="returns.html">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="faq.html">よくある質問</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="terms.html">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品詳細 - Atelier Bloom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="test-local.html">Atelier Bloom</a>
+            </h1>
+            <nav class="nav">
+                <a href="test-local.html">HOME</a>
+                <a href="products-local.html">CATEGORY</a>
+                <a href="#about">ABOUT</a>
+                <a href="#guide">GUIDE</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="favorites-btn">♡</button>
+                <button class="cart-btn">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <a href="login.html" class="login-btn">ログイン</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="test-local.html">ホーム</a> &gt; 
+                <a href="products-local.html">商品一覧</a> &gt; 
+                <span id="productBreadcrumb">商品詳細</span>
+            </div>
+        </div>
+
+        <section class="product-detail" id="productDetail">
+            <div class="container">
+                <div class="product-detail-content">
+                    <div class="product-images">
+                        <div class="thumbnail-list">
+                            <div class="thumbnail active" onclick="selectImage(0)">
+                                <div class="placeholder-image">画像1</div>
+                            </div>
+                            <div class="thumbnail" onclick="selectImage(1)">
+                                <div class="placeholder-image">画像2</div>
+                            </div>
+                            <div class="thumbnail" onclick="selectImage(2)">
+                                <div class="placeholder-image">画像3</div>
+                            </div>
+                        </div>
+                        <div class="main-image">
+                            <div class="placeholder-image" id="mainProductImage">商品画像</div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-detail-info">
+                        <h1 id="productName">商品名</h1>
+                        <p class="product-detail-price price" id="productPrice">¥0</p>
+                        <span class="stock-status in-stock" id="stockStatus">在庫あり</span>
+                        
+                        <div class="product-description">
+                            <p id="productDescription">商品説明が表示されます。</p>
+                        </div>
+                        
+                        <div class="product-options">
+                            <div class="quantity-selector">
+                                <label>数量:</label>
+                                <button class="quantity-decrease" onclick="changeQuantity(-1)">-</button>
+                                <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="10">
+                                <button class="quantity-increase" onclick="changeQuantity(1)">+</button>
+                            </div>
+                            
+                            <button class="add-to-cart" id="addToCartBtn" onclick="addToCart()">
+                                カートに追加
+                            </button>
+                            
+                            <button class="add-to-favorites" id="favoriteBtn" onclick="toggleFavorite()">
+                                ♡ お気に入りに追加
+                            </button>
+                        </div>
+                        
+                        <div class="product-specs">
+                            <h3>商品詳細</h3>
+                            <div class="spec-item">
+                                <span class="spec-label">素材:</span>
+                                <span class="spec-value" id="productMaterials">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">サイズ:</span>
+                                <span class="spec-value" id="productSize">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">お手入れ:</span>
+                                <span class="spec-value" id="productCare">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title">関連商品</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <a href="product-detail-local.html?id=2" class="product-item">
+                        <div class="product-image">
+                            <div class="placeholder-image">ローズクォーツネックレス</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ローズクォーツネックレス</h3>
+                            <p class="product-price price">¥4,800</p>
+                        </div>
+                    </a>
+                    
+                    <a href="product-detail-local.html?id=3" class="product-item">
+                        <div class="product-image">
+                            <div class="placeholder-image">シンプルゴールドブレスレット</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">シンプルゴールドブレスレット</h3>
+                            <p class="product-price price">¥3,800</p>
+                        </div>
+                    </a>
+                    
+                    <a href="product-detail-local.html?id=5" class="product-item">
+                        <div class="product-image">
+                            <div class="placeholder-image">ムーンストーンフープピアス</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">ムーンストーンフープピアス</h3>
+                            <p class="product-price price">¥3,600</p>
+                        </div>
+                    </a>
+                    
+                    <a href="product-detail-local.html?id=8" class="product-item">
+                        <div class="product-image">
+                            <div class="placeholder-image">クリスタルスタッドピアス</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">クリスタルスタッドピアス</h3>
+                            <p class="product-price price">¥2,800</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        <h3>Atelier Bloom</h3>
+                        <p>ハンドメイドアクセサリーの専門店</p>
+                    </a>
+                </div>
+                <div class="footer-section">
+                    <h4>ショップ情報</h4>
+                    <ul>
+                        <li><a href="#guide">ご注文方法</a></li>
+                        <li><a href="#guide">お支払いについて</a></li>
+                        <li><a href="#guide">配送について</a></li>
+                        <li><a href="#guide">返品・交換</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#privacy">プライバシーポリシー</a></li>
+                        <li><a href="#terms">利用規約</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atelier Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 商品データ（ローカル用）
+        const products = {
+            1: {
+                id: 1,
+                name: "パールドロップピアス",
+                category: "pierced",
+                price: 3200,
+                description: "上品な淡水パールを使用したエレガントなピアス。どんな装いにも合わせやすく、特別な日にもお使いいただけます。一つひとつ手作業で丁寧に仕上げており、パールの自然な輝きが美しく、上品で洗練された印象を与えます。",
+                materials: "淡水パール、14Kゴールドフィルド",
+                size: "約2.5cm",
+                stock: 5,
+                care: "水に濡れないよう注意し、柔らかい布で軽く拭いてください。"
+            },
+            2: {
+                id: 2,
+                name: "ローズクォーツネックレス",
+                category: "necklaces",
+                price: 4800,
+                description: "愛と美の石として知られるローズクォーツのナチュラルな美しさを活かしたネックレス。淡いピンク色が肌なじみよく、優しい印象を与えてくれます。チェーンの長さは調整可能で、お好みのスタイルでお楽しみいただけます。",
+                materials: "ローズクォーツ、シルバー925",
+                size: "チェーン長：45cm（アジャスター3cm）",
+                stock: 3,
+                care: "直射日光を避けて保管してください。"
+            },
+            3: {
+                id: 3,
+                name: "シンプルゴールドブレスレット",
+                category: "bracelets",
+                price: 3800,
+                description: "日常使いにぴったりな上品なゴールドブレスレット。重ね付けにもおすすめです。シンプルなデザインながら、上質な素材を使用しているため、身につけるだけで品格が上がります。どんなスタイルにも合わせやすい万能アイテムです。",
+                materials: "14Kゴールドフィルド",
+                size: "内周：約16cm（調整可）",
+                stock: 8,
+                care: "汗や水分を避け、使用後は乾いた布で拭いてください。"
+            },
+            4: {
+                id: 4,
+                name: "桜モチーフピアス【限定】",
+                category: "limited",
+                price: 4200,
+                description: "春の訪れを告げる桜をモチーフにした季節限定のピアス。繊細な彫刻が美しい一品です。職人の手による細かな装飾が施されており、桜の花びらの繊細さまで表現されています。春の装いにぴったりの特別なアクセサリーです。",
+                materials: "シルバー925、ピンクサファイア",
+                size: "約1.8cm",
+                stock: 2,
+                care: "専用クロスで優しく磨いてください。"
+            },
+            5: {
+                id: 5,
+                name: "ムーンストーンフープピアス",
+                category: "pierced",
+                price: 3600,
+                description: "神秘的な輝きのムーンストーンをあしらったフープピアス。光の角度で表情が変わります。ムーンストーン特有の虹色の光彩（アデュラレッセンス）が美しく、身につける人を神秘的で魅力的に演出してくれます。",
+                materials: "ムーンストーン、シルバー925",
+                size: "直径：2cm",
+                stock: 6,
+                care: "月光浴で浄化すると石の力が高まります。"
+            },
+            6: {
+                id: 6,
+                name: "アメジストティアドロップネックレス",
+                category: "necklaces",
+                price: 5200,
+                description: "美しい紫色のアメジストをティアドロップカットにした上品なネックレス。アメジストの深い紫色が上品で洗練された印象を与え、特別な日の装いを格上げしてくれます。ティアドロップカットにより光の反射が美しく輝きます。",
+                materials: "アメジスト、14Kゴールドフィルド",
+                size: "チェーン長：40cm（アジャスター5cm）",
+                stock: 4,
+                care: "紫外線を避けて保管してください。"
+            },
+            7: {
+                id: 7,
+                name: "ターコイズチェーンブレスレット",
+                category: "bracelets",
+                price: 4200,
+                description: "鮮やかなターコイズブルーが印象的な夏らしいブレスレット。ターコイズの鮮やかなブルーが肌を美しく見せ、夏の装いにぴったりです。天然石の持つエネルギーが感じられる、癒しの効果も期待できるアクセサリーです。",
+                materials: "ターコイズ、シルバー925",
+                size: "内周：約17cm（調整可）",
+                stock: 5,
+                care: "水に濡らさないよう注意してください。"
+            },
+            8: {
+                id: 8,
+                name: "クリスタルスタッドピアス",
+                category: "pierced",
+                price: 2800,
+                description: "クリアクリスタルの輝きが美しいシンプルなスタッドピアス。どんなシーンにも合わせやすく、毎日使いにおすすめです。高品質なクリスタルを使用しており、光を美しく反射して顔周りを明るく見せてくれます。",
+                materials: "クリスタル、シルバー925",
+                size: "約0.8cm",
+                stock: 12,
+                care: "柔らかい布で優しく拭いてください。"
+            }
+        };
+
+        let currentProduct = null;
+        let quantity = 1;
+
+        // ページ読み込み時の初期化
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProduct();
+            updateCartCount();
+        });
+
+        function loadProduct() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id')) || 1;
+            
+            currentProduct = products[productId];
+            if (currentProduct) {
+                displayProduct();
+                updateBreadcrumb();
+            } else {
+                showError();
+            }
+        }
+
+        function displayProduct() {
+            document.getElementById('productName').textContent = currentProduct.name;
+            document.getElementById('productPrice').textContent = `¥${currentProduct.price.toLocaleString()}`;
+            document.getElementById('productDescription').textContent = currentProduct.description;
+            document.getElementById('productMaterials').textContent = currentProduct.materials;
+            document.getElementById('productSize').textContent = currentProduct.size;
+            document.getElementById('productCare').textContent = currentProduct.care;
+            document.getElementById('mainProductImage').textContent = currentProduct.name;
+            
+            // 在庫状況の表示
+            const stockStatus = document.getElementById('stockStatus');
+            if (currentProduct.stock > 5) {
+                stockStatus.textContent = '在庫あり';
+                stockStatus.className = 'stock-status in-stock';
+            } else if (currentProduct.stock > 0) {
+                stockStatus.textContent = `残り${currentProduct.stock}点`;
+                stockStatus.className = 'stock-status low-stock';
+            } else {
+                stockStatus.textContent = '在庫なし';
+                stockStatus.className = 'stock-status out-of-stock';
+                document.getElementById('addToCartBtn').disabled = true;
+                document.getElementById('addToCartBtn').textContent = '在庫切れ';
+            }
+            
+            // お気に入りボタンの状態
+            updateFavoriteButton();
+            
+            // 数量入力の最大値設定
+            document.getElementById('quantityInput').max = currentProduct.stock;
+        }
+
+        function updateBreadcrumb() {
+            document.getElementById('productBreadcrumb').textContent = currentProduct.name;
+        }
+
+        function selectImage(index) {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        }
+
+        function changeQuantity(change) {
+            const input = document.getElementById('quantityInput');
+            const newQuantity = quantity + change;
+            
+            if (newQuantity >= 1 && newQuantity <= currentProduct.stock) {
+                quantity = newQuantity;
+                input.value = quantity;
+                updateQuantityButtons();
+            }
+        }
+
+        function updateQuantityButtons() {
+            const decreaseBtn = document.querySelector('.quantity-decrease');
+            const increaseBtn = document.querySelector('.quantity-increase');
+            
+            decreaseBtn.disabled = quantity <= 1;
+            increaseBtn.disabled = quantity >= currentProduct.stock;
+        }
+
+        function addToCart() {
+            if (!currentProduct || currentProduct.stock === 0) return;
+            
+            const quantityInput = document.getElementById('quantityInput');
+            const selectedQuantity = parseInt(quantityInput.value);
+            
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.id === currentProduct.id);
+            
+            if (existingItem) {
+                const newQuantity = existingItem.quantity + selectedQuantity;
+                if (newQuantity <= currentProduct.stock) {
+                    existingItem.quantity = newQuantity;
+                } else {
+                    alert(`在庫が不足しています。最大${currentProduct.stock}個まで追加できます。`);
+                    return;
+                }
+            } else {
+                cart.push({
+                    id: currentProduct.id,
+                    name: currentProduct.name,
+                    price: currentProduct.price,
+                    quantity: selectedQuantity
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showAddToCartMessage();
+        }
+
+        function toggleFavorite() {
+            let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            
+            if (favorites.includes(currentProduct.id)) {
+                favorites = favorites.filter(id => id !== currentProduct.id);
+            } else {
+                favorites.push(currentProduct.id);
+            }
+            
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            updateFavoriteButton();
+        }
+
+        function updateFavoriteButton() {
+            const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            
+            if (favorites.includes(currentProduct.id)) {
+                favoriteBtn.innerHTML = '❤️ お気に入り済み';
+            } else {
+                favoriteBtn.innerHTML = '♡ お気に入りに追加';
+            }
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        function showAddToCartMessage() {
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed; top: 20px; right: 20px; z-index: 1000;
+                background-color: var(--accent-color); color: white;
+                padding: 15px 20px; border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                animation: slideInRight 0.3s ease;
+            `;
+            message.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <span>✓ カートに追加しました</span>
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            style="background: none; border: none; color: white; font-size: 18px; cursor: pointer;">×</button>
+                </div>
+            `;
+            
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 3000);
+        }
+
+        function showError() {
+            document.getElementById('productDetail').innerHTML = `
+                <div class="container">
+                    <div class="error-message">
+                        <h3>商品が見つかりませんでした</h3>
+                        <p>指定された商品は存在しないか、削除された可能性があります。</p>
+                        <a href="products-local.html" class="btn-secondary">商品一覧に戻る</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 数量入力フィールドの変更イベント
+        document.getElementById('quantityInput').addEventListener('change', function() {
+            const value = parseInt(this.value);
+            if (value >= 1 && value <= currentProduct.stock) {
+                quantity = value;
+                updateQuantityButtons();
+            } else {
+                this.value = quantity;
+            }
+        });
+
+        // カートボタンクリックイベント
+        document.querySelector('.cart-btn').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            if (cart.length === 0) {
+                alert('カートは空です');
+            } else {
+                const items = cart.map(item => `${item.name} × ${item.quantity}`).join('\n');
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                alert(`カートの中身:\n${items}\n\n合計: ¥${total.toLocaleString()}`);
+            }
+        });
+    </script>
+</body>
+</html>
