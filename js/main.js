@@ -1130,11 +1130,26 @@ function toggleMobileMenu() {
         if (mobileCartCount && window.mainApp) {
             mobileCartCount.textContent = window.mainApp.cart.reduce((sum, item) => sum + item.quantity, 0);
         }
+        
+        // メニューが開かれた時にオーバーレイクリックイベントを追加
+        if (overlay.classList.contains('active')) {
+            overlay.addEventListener('click', handleOverlayClick);
+        } else {
+            overlay.removeEventListener('click', handleOverlayClick);
+        }
     } else {
         // オーバーレイが存在しない場合は作成
         createMobileMenuOverlay();
         // 作成後に再度呼び出し
         setTimeout(() => toggleMobileMenu(), 100);
+    }
+}
+
+// オーバーレイクリック処理
+function handleOverlayClick(e) {
+    // オーバーレイ背景（メニューコンテンツ外）をクリックした場合にメニューを閉じる
+    if (e.target.classList.contains('mobile-menu-overlay')) {
+        toggleMobileMenu();
     }
 }
 
@@ -1223,6 +1238,13 @@ MainApp.prototype.toggleMobileMenu = function() {
         const mobileCartCount = document.getElementById('mobile-cart-count');
         if (mobileCartCount) {
             mobileCartCount.textContent = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+        
+        // メニューが開かれた時にオーバーレイクリックイベントを追加
+        if (overlay.classList.contains('active')) {
+            overlay.addEventListener('click', handleOverlayClick);
+        } else {
+            overlay.removeEventListener('click', handleOverlayClick);
         }
     }
 };
