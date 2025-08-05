@@ -392,6 +392,11 @@ class ProductDetailPage {
         // カート数を更新
         this.updateCartCount();
         
+        // MainAppのインスタンスが存在する場合はそちらも更新
+        if (window.mainApp && window.mainApp.updateCartCount) {
+            window.mainApp.updateCartCount();
+        }
+        
         // 成功メッセージ
         this.showAddToCartMessage();
     }
@@ -400,9 +405,16 @@ class ProductDetailPage {
         const cart = JSON.parse(localStorage.getItem('cart') || '[]');
         const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
         
+        // デスクトップカートカウント更新
         const cartCount = document.getElementById('cartCount');
         if (cartCount) {
             cartCount.textContent = totalItems;
+        }
+        
+        // モバイルカートカウント更新
+        const mobileCartCount = document.getElementById('mobileCartCount');
+        if (mobileCartCount) {
+            mobileCartCount.textContent = totalItems;
         }
     }
 

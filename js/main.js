@@ -371,7 +371,11 @@ class MainApp {
     }
 
     updateCartCount() {
+        // 最新のカートデータを読み込み
+        this.loadCartFromStorage();
         const totalItems = this.cart.reduce((total, item) => total + item.quantity, 0);
+        
+        console.log('カート数更新 - アイテム数:', totalItems, 'カート内容:', this.cart);
         
         // デスクトップカートカウント更新
         const cartCount = document.getElementById('cartCount');
@@ -387,6 +391,10 @@ class MainApp {
     }
 
     showCartModal() {
+        // 最新のカートデータをlocalStorageから読み込み
+        this.loadCartFromStorage();
+        console.log('カートモーダル表示 - カートアイテム数:', this.cart.length);
+        
         // カートモーダルを作成・表示
         const modal = this.createCartModal();
         document.body.appendChild(modal);
@@ -432,7 +440,9 @@ class MainApp {
         return this.cart.map(item => `
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-image">
-                    <div class="placeholder-image">${item.name}</div>
+                    <div class="placeholder-image">
+                        <span class="product-name-preview">${item.name}</span>
+                    </div>
                 </div>
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
@@ -840,6 +850,28 @@ const cartModalCSS = `
     overflow: hidden;
 }
 
+.cart-item-image .placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.cart-item-image .product-name-preview {
+    display: block;
+    font-weight: 500;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .cart-item-info h4 {
     margin: 0 0 5px 0;
     font-size: 16px;
@@ -995,11 +1027,33 @@ const cartModalCSS = `
     .cart-item {
         grid-template-columns: 60px 1fr;
         gap: 10px;
+        align-items: start;
+    }
+    
+    .cart-item-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cart-item-info h4 {
+        font-size: 14px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+    
+    .cart-item-info p {
+        font-size: 14px;
     }
     
     .cart-item-controls, .cart-item-total {
         grid-column: 1 / -1;
         margin-top: 10px;
+    }
+    
+    .cart-item-total {
+        text-align: left;
+        font-size: 16px;
+        margin-top: 5px;
     }
     
     .cart-actions {
