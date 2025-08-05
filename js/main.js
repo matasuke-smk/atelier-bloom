@@ -1122,34 +1122,46 @@ document.head.appendChild(mainAppStyle);
 
 // モバイルメニュー機能を追加
 function toggleMobileMenu() {
-    const overlay = document.getElementById('mobile-menu-overlay');
+    let overlay = document.getElementById('mobile-menu-overlay');
+    
+    // オーバーレイが存在しない場合は作成
+    if (!overlay) {
+        createMobileMenuOverlay();
+        overlay = document.getElementById('mobile-menu-overlay');
+    }
+    
     if (overlay) {
+        const isOpening = !overlay.classList.contains('active');
         overlay.classList.toggle('active');
+        
         // カート数を更新
         const mobileCartCount = document.getElementById('mobile-cart-count');
         if (mobileCartCount && window.mainApp) {
             mobileCartCount.textContent = window.mainApp.cart.reduce((sum, item) => sum + item.quantity, 0);
         }
         
-        // メニューが開かれた時にオーバーレイクリックイベントを追加
-        if (overlay.classList.contains('active')) {
+        // イベントリスナーを管理（重複を防ぐ）
+        if (isOpening) {
+            // メニューを開く時：イベントリスナーを追加
+            overlay.removeEventListener('click', handleOverlayClick); // 既存のを削除してから
             overlay.addEventListener('click', handleOverlayClick);
         } else {
+            // メニューを閉じる時：イベントリスナーを削除
             overlay.removeEventListener('click', handleOverlayClick);
         }
-    } else {
-        // オーバーレイが存在しない場合は作成
-        createMobileMenuOverlay();
-        // 作成後に再度呼び出し
-        setTimeout(() => toggleMobileMenu(), 100);
     }
 }
 
 // オーバーレイクリック処理
 function handleOverlayClick(e) {
+    console.log('オーバーレイクリック:', e.target.className);
     // オーバーレイ背景（メニューコンテンツ外）をクリックした場合にメニューを閉じる
     if (e.target.classList.contains('mobile-menu-overlay')) {
-        toggleMobileMenu();
+        console.log('オーバーレイ背景をクリック - メニューを閉じます');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        if (overlay && overlay.classList.contains('active')) {
+            toggleMobileMenu();
+        }
     }
 }
 
@@ -1231,19 +1243,31 @@ MainApp.prototype.createMobileMenuOverlay = function() {
 };
 
 MainApp.prototype.toggleMobileMenu = function() {
-    const overlay = document.getElementById('mobile-menu-overlay');
+    let overlay = document.getElementById('mobile-menu-overlay');
+    
+    // オーバーレイが存在しない場合は作成
+    if (!overlay) {
+        this.createMobileMenuOverlay();
+        overlay = document.getElementById('mobile-menu-overlay');
+    }
+    
     if (overlay) {
+        const isOpening = !overlay.classList.contains('active');
         overlay.classList.toggle('active');
+        
         // カート数を更新
         const mobileCartCount = document.getElementById('mobile-cart-count');
         if (mobileCartCount) {
             mobileCartCount.textContent = this.cart.reduce((sum, item) => sum + item.quantity, 0);
         }
         
-        // メニューが開かれた時にオーバーレイクリックイベントを追加
-        if (overlay.classList.contains('active')) {
+        // イベントリスナーを管理（重複を防ぐ）
+        if (isOpening) {
+            // メニューを開く時：イベントリスナーを追加
+            overlay.removeEventListener('click', handleOverlayClick); // 既存のを削除してから
             overlay.addEventListener('click', handleOverlayClick);
         } else {
+            // メニューを閉じる時：イベントリスナーを削除
             overlay.removeEventListener('click', handleOverlayClick);
         }
     }
@@ -1392,5 +1416,19 @@ document.head.appendChild(mobileMenuStyle);
 
 // ページ読み込み時にモバイルメニューを初期化
 document.addEventListener('DOMContentLoaded', function() {
-    createMobileMenuOverlay();
+    // 少し遅延してモバイルメニューを初期化（他のスクリプトとの競合を避ける）
+    setTimeout(() => {
+        if (!document.getElementById('mobile-menu-overlay')) {
+            createMobileMenuOverlay();
+        }
+    }, 200);
+});
+
+// 念のため、windowのloadイベントでも確認
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        if (!document.getElementById('mobile-menu-overlay')) {
+            createMobileMenuOverlay();
+        }
+    }, 300);
 });
